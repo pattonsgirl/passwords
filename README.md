@@ -49,4 +49,7 @@ Some optional commands that I like to add (after `-a 0`)
 * `-o` specifies an output file for us to search later
 * `--remove` removes hash entries from the shadow file after they are found
 
+***A NOT SO OPTIONAL OPTION***
+* you will probably need to use `hashcat --force` then the rest of the above options
+
 
