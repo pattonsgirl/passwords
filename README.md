@@ -40,7 +40,7 @@ wget https://github.com/mkijowski/passwords/raw/master/dictionaries/rockyou.txt.
 The above command can be broken down as follows:
 
 * `hashcat` is the program you are running (which might need to be installed)
-* `-m 1800` is the hash specification.  `-m` is hashtype and `1800` is for SHA-512 (`man hashcat` -> `/Hash types`)
+* `-m 1800` is the hash specification.  `-m` is hashtype and `1800` is for SHA-512(unix) (`man hashcat` -> `/Hash types`)
 * `-a 0` is for attack type 0, for straight (`man hashcat` -> `/Attack mode`)
 * `<shadowfile> <dictionaryfile>` are the last two arguments hashcat takes and are simply paths to the shadow and dictionary file
 
