@@ -8,7 +8,9 @@
 
 ## The setup
 
-Previously you all created user account with dummy passwords and submitted them to pilot.  Hashcat needs them in a particular format so I have altered them all and placed them in 
+A previous class created user account with dummy passwords and submitted them to me.  Due to a recent bought of Covid, I brain fogged a permission and all of these "secure" password hashes were leaked online.
+
+One of the cse-devteam members found this list floating around and appears to be in a particular format.  The devteam uploaded the file to this repository: 
 `./data/shadow`.  Entries look like this:
 
 ```
@@ -35,7 +37,9 @@ wget https://github.com/mkijowski/passwords/raw/master/dictionaries/rockyou.txt.
 
 ## The attack
 
-`hashcat -m 1800 -a 0 shadow ./dictionaries/500_passwords.txt`
+***You will need to edit the paths before this will run!!!***
+
+`hashcat -m 1800 -a 0 </path/to/shadowfile> </path/to/dictionaries/500_passwords.txt>`
 
 The above command can be broken down as follows:
 
@@ -46,10 +50,14 @@ The above command can be broken down as follows:
 
 Some optional commands that I like to add (after `-a 0`)
 
-* `-o` specifies an output file for us to search later
+* `-o` specifies an output file for us to search later.  By default you can search `~/.hashcat/hashcat.potfile`
 * `--remove` removes hash entries from the shadow file after they are found
 
 ***A NOT SO OPTIONAL OPTION***
+
 * you will probably need to use `hashcat --force` then the rest of the above options
 
+## Debugging tips:
+
+* Intel CPU's might need the following program installed if hashcat does not run: `sudo apt install intel-opencl-icd`
 
