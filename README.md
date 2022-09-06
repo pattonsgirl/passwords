@@ -8,7 +8,7 @@
 
 ## The setup
 
-A previous class created user account with dummy passwords and submitted them to me.  Due to a recent bought of Covid, I brain fogged a permission and all of these "secure" password hashes were leaked online.
+A previous class created user accounts with dummy passwords and submitted them to me.  Due to a recent bought of Covid, I brain fogged a permission and all of these "secure" password hashes were leaked online.
 
 One of the cse-devteam members found this list floating around and appears to be in a particular format.  The devteam uploaded the file to this repository: 
 `./data/shadow`.  Entries look like this:
@@ -29,8 +29,14 @@ You will need to download the dictionaries and shadow file via github website (w
 wget https://raw.githubusercontent.com/mkijowski/passwords/master/dictionaries/500_passwords.txt
 wget https://raw.githubusercontent.com/mkijowski/passwords/master/data/shadow
 
-(dont try this last one in class, it's a doozy)
+# (dont try this last one in class, it's a doozy)
 wget https://github.com/mkijowski/passwords/raw/master/dictionaries/rockyou.txt.gz
+```
+
+You will also need hashcat installed, if you are using Ubuntu (or WSL Ubuntu) you can install it with:
+
+```bash
+sudo apt install hashcat
 ```
 
 ---
