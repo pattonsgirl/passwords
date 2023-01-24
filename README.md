@@ -51,12 +51,13 @@ The above command can be broken down as follows:
 
 * `hashcat` is the program you are running (which might need to be installed)
 * `-m 1800` is the hash specification.  `-m` is hashtype and `1800` is for SHA-512(unix) (`man hashcat` -> `/Hash types`)
+	* Note your encryption type specified in the beginning of the line from `/etc/shadow`
 * `-a 0` is for attack type 0, for straight (`man hashcat` -> `/Attack mode`)
 * `<shadowfile> <dictionaryfile>` are the last two arguments hashcat takes and are simply paths to the shadow and dictionary file
 
 Some optional commands that I like to add (after `-a 0`)
 
-* `-o` specifies an output file for us to search later.  By default you can search `~/.hashcat/hashcat.potfile`
+* `-o` specifies an output file for us to search later.  By default you can search `~/.hashcat/hashcat.potfile` OR `~/.local/share/hashcat/hashcat.potfile`
 * `--remove` removes hash entries from the shadow file after they are found
 
 ***A NOT SO OPTIONAL OPTION***
